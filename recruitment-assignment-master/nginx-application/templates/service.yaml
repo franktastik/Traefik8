@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "recruitment-assignment-template.fullname" . }}
+  namespace: kube-system
+  labels:
+    {{ include "recruitment-assignment-template.labels" . | nindent 2 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: 21
+      targetPort: ftp
+      protocol: TCP
+      name: ftp
+  selector:
+    {{ include "recruitment-assignment-template.selectorLabels" . | nindent 2 }}
