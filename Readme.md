@@ -1,4 +1,4 @@
-# Recruitment assignment task (Helm + Kubernetes)
+# Helm + Kubernetes
 
 ## Objective
 
